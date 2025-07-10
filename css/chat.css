@@ -1,0 +1,35 @@
+body {
+    background-color: #fff;
+}
+
+.main-header {
+    justify-content: center;
+}
+
+.chat-list {
+    margin-bottom: 60px;
+}
+
+.chat-person {
+    display: flex;
+    gap: 8px;
+    padding: 12px 0;
+}
+
+.chat-person > div{
+    width: 100%;
+} 
+
+.chat-person > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-person >div >span {
+    font-size: 0.9rem;
+}
+
+.time{
+    font-size: 0.8rem;
+    color: var(--border-color-gray);
+}
