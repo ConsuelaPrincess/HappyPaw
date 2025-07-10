@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>滑動卡片</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/slide-pet.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="home.html" class=""><img src="img/x.svg" alt=""></a>
+        <h4>為你推薦</h4>
+        <button class=""><img src="" alt=""></button>
+    </header>
+    <div class="card-container" id="cardContainer"></div>
+    <div class="slide-btn">
+        <button id="btn-nope"><img src="img/slide-nope.svg" alt=""></button>
+        <button id="btn-like"><img src="img/slide-like.svg" alt=""></button>
+    </div>
+</body>
+<script>
+    const cardData = [{
+            name: "PinkMan",
+            genderIcon: "img/male.svg",
+            tags: ["米克斯", "3歲", "活潑外向"],
+            location: {
+                icon: "img/location.svg",
+                text: "台北市, 臺北市立收容所"
+            },
+            image: "./img/pet/dog/dog-7.jpg"
+        },
+        {
+            name: "Luna",
+            genderIcon: "img/female.svg",
+            tags: ["拉布拉多", "1歲", "親人黏人"],
+            location: {
+                icon: "img/location.svg",
+                text: "台北市, 臺北市立收容所"
+            },
+            image: "./img/pet/dog/dog-2.jpg"
+        },
+        {
+            name: "Luna",
+            genderIcon: "img/female.svg",
+            tags: ["拉布拉多", "1歲", "親人黏人"],
+            location: {
+                icon: "img/location.svg",
+                text: "新北市, 張媽媽收容所"
+            },
+            image: "./img/pet/dog/dog-3.jpg"
+        },
+        {
+            name: "Luna",
+            genderIcon: "img/female.svg",
+            tags: ["拉布拉多", "1歲", "親人黏人"],
+            location: {
+                icon: "img/location.svg",
+                text: "宜蘭縣, 個人送養"
+            },
+            image: "./img/pet/dog/dog-4.jpg"
+        },
+        {
+            name: "Luna",
+            genderIcon: "img/female.svg",
+            tags: ["拉布拉多", "1歲", "親人黏人"],
+            location: {
+                icon: "img/location.svg",
+                text: "台中市, 浪浪別哭"
+            },
+            image: "./img/pet/dog/dog-10.jpg"
+        }
+    ];
+
+    const container = document.getElementById("cardContainer");
+    const liked = [];
+    const skipped = [];
+
+    function createCard(data) {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.style.backgroundImage = `url(${data.image})`;
+
+        const tagHTML = data.tags.map(
+            tag => `<span class="pet-data yellow-data">${tag}</span>`
+        ).join("");
+
+        card.innerHTML = `
+    <div class="label like">LIKE</div>
+    <div class="label nope">NOPE</div>
+    <div class="pet-desc">
+      <div>
+        <span class="name">${data.name}</span>
+        <img src="${data.genderIcon}" alt="性別" />
+      </div>
+      <div>${tagHTML}</div>
+      <div>
+        <img class="img-18" src="${data.location.icon}" alt="地點" />
+        <span class="pet-data">${data.location.text}</span>
+      </div>
+    </div>
+  `;
+        container.appendChild(card);
+        setupCard(card);
+    }
+
+    function applyCardStackStyle() {
+        const cards = Array.from(container.querySelectorAll(".card")).reverse();
+
+        cards.forEach((card, i) => {
+            const offset = i * -10; // 每張卡片往下偏移 10px
+            card.style.transform = `translateY(${offset}px)`;
+            card.style.zIndex = cards.length - i;
+        });
+    }
+
+    function setupCard(card) {
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+
+        const likeLabel = card.querySelector(".like");
+        const nopeLabel = card.querySelector(".nope");
+
+        function updateTransform(x) {
+            card.style.transform = `translateX(${x}px) rotate(${x / 10}deg)`;
+            likeLabel.style.opacity = x > 0 ? Math.min(x / 100, 1) : 0;
+            nopeLabel.style.opacity = x < 0 ? Math.min(-x / 100, 1) : 0;
+        }
+
+        function endDrag() {
+            card.style.transition = "transform 0.3s ease-out";
+            likeLabel.style.opacity = 0;
+            nopeLabel.style.opacity = 0;
+
+            if (currentX > 100) {
+                liked.push(card.querySelector(".name").textContent);
+                card.style.transform = "translateX(1000px)";
+            } else if (currentX < -100) {
+                skipped.push(card.querySelector(".name").textContent);
+                card.style.transform = "translateX(-1000px)";
+            } else {
+                card.style.transform = `translateY(0)`;
+                applyCardStackStyle();
+                return;
+            }
+
+            setTimeout(() => {
+                card.remove();
+                applyCardStackStyle();
+            }, 300);
+        }
+
+        card.addEventListener("mousedown", (e) => {
+            startX = e.clientX;
+            isDragging = true;
+            card.style.transition = "none";
+        });
+        document.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            currentX = e.clientX - startX;
+            updateTransform(currentX);
+        });
+        document.addEventListener("mouseup", () => {
+            if (!isDragging) return;
+            isDragging = false;
+            endDrag();
+        });
+
+        card.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            card.style.transition = "none";
+        });
+        card.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX - startX;
+            updateTransform(currentX);
+        });
+        card.addEventListener("touchend", () => {
+            if (!isDragging) return;
+            isDragging = false;
+            endDrag();
+        });
+    }
+
+    cardData.forEach(createCard);
+    applyCardStackStyle();
+
+    document.getElementById("btn-nope").addEventListener("click", swipeLeft);
+    document.getElementById("btn-like").addEventListener("click", swipeRight);
+
+    function swipeLeft() {
+        const topCard = container.querySelector(".card:last-child");
+        if (!topCard) return;
+
+        const nopeLabel = topCard.querySelector(".nope");
+        nopeLabel.style.opacity = 1;
+
+        topCard.style.transition = "transform 0.8s ease-out";
+        topCard.style.transform = "translateX(-1000px) rotate(-30deg)";
+
+        const name = topCard.querySelector(".name").textContent;
+        skipped.push(name);
+
+        setTimeout(() => {
+            topCard.remove();
+            createCard(getNextCardData());
+            applyCardStackStyle();
+        }, 300);
+    }
+
+    function swipeRight() {
+        const topCard = container.querySelector(".card:last-child");
+        if (!topCard) return;
+
+        const likeLabel = topCard.querySelector(".like");
+        likeLabel.style.opacity = 1;
+
+        topCard.style.transition = "transform 0.8s ease-out";
+        topCard.style.transform = "translateX(1000px) rotate(30deg)";
+
+        const name = topCard.querySelector(".name").textContent;
+        liked.push(name);
+
+        setTimeout(() => {
+            topCard.remove();
+            createCard(getNextCardData());
+            applyCardStackStyle();
+        }, 300);
+    }
+</script>
+
+</html>

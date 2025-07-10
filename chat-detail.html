@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/chat-detail.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>對話內容</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="chat.html" class="back-btn"><img src="img/chevron-left.svg" alt=""></a>
+        <h4>David</h4>
+        <button class="calender-btn"><img src="img/calender.svg" alt=""></button>
+
+    </header>
+    <nav>
+        <div class="search-container">
+            <input type="text" placeholder="搜尋你想領養的品種...">
+            <img class="non-actived" src="img/plus.svg" alt="">
+            <div>
+                <button><img src="img/sent-white.svg" alt=""></button>
+            </div>
+        </div>
+    </nav>
+    <main class="wrap">
+        <div class="dialog">
+            <div class="mybubbles">
+                你好，請問需要轉移晶片嗎？
+            </div>
+            <div class="bubbles-group">
+                <img class="profile-img" src="img/profile-img.png" alt="">
+                <div class="bubbles-wrap">
+                    <div class="bubbles">
+                        不用喔
+                    </div>
+                    <div class="bubbles">
+                        沒有晶片~
+                    </div>
+                </div>
+            </div>
+            <div class="mybubbles">
+                請問什麼時候可以預約？
+            </div>
+            <div class="bubbles-group">
+                <img class="profile-img" src="img/profile-img.png" alt="">
+                <div class="bubbles-wrap">
+                    <div class="bubbles">
+                        週五可以嗎？<br>
+                        我18:00會帶牠去運動公園散步
+                    </div>
+                </div>
+            </div>
+            <div class="mybubbles">
+                可以的
+            </div>
+            <div class="mybubbles">
+                2025.9.23(五) 晚上6:00
+                <button class="secondary-btn">已建立預約</button>
+            </div>
+            <div class="bubbles-group">
+                <img class="profile-img" src="img/profile-img.png" alt="">
+                <div class="bubbles-wrap">
+                    <div class="bubbles">
+                        好的!
+                    </div>
+                    <div class="bubbles">
+                        到時候
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="appointment-form">
+        <div class="form-top">
+            <button class="close-btn"><img src="img/x.svg" alt=""></button>
+            <h4>建立預約</h4>
+        </div>
+        <div class="form-main">
+            <div class="pet-content">
+                <div>
+                    <img class="pet-img" src="img/pet/dog/dog-1.jpg" alt="">
+                </div>
+                <div class="pet-desc">
+                    <div><span class="name">PinkMan</span><img src="img/male.svg" alt="icon-gender"></div>
+                    <div><span class="pet-data yellow-data">米克斯</span><span class="pet-data yellow-data">3歲</span><span
+                            class="pet-data yellow-data">活潑外向</span></div>
+                    <div><img class="img-18" src="img/location.svg" alt="icon-location"><span
+                            class="pet-data">台北市</span></div>
+                </div>
+            </div>
+            <div>
+                <label for="" class="title">你想預約的時間？</label>
+                <input id="" name="" type="date" placeholder="">
+            </div>
+            <div>
+                <label for="" class="title">你想預約的地點？</label>
+                <input id="" name="" type="text" placeholder="">
+            </div>
+            <div>
+                <label for="" class="title">備註</label>
+                <textarea id="" name=""></textarea>
+            </div>
+        </div>
+        <div class="form-bottom"><button class="primary-btn" id="dog-apply-filter">建立預約</button></div>
+    </div>
+
+
+    <script>
+        document.querySelector(".calender-btn").addEventListener("click", function () {
+            document.querySelector("#appointment-form").style.display = "block";
+            document.querySelector(".paw-desc").style.display = "none";
+        });
+        // 點擊「關閉」按鈕時隱藏篩選彈窗
+        document.querySelector(".close-btn").addEventListener("click", function () {
+            document.querySelector("#appointment-form").style.display = "none";
+            document.querySelector(".paw-desc").style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
