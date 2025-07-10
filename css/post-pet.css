@@ -1,0 +1,317 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    max-width: 425px;
+    width: 100%;
+    padding: 16px 16px 0 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.04);
+    z-index: 10;
+}
+
+header>div:first-of-type {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.back-btn {
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+}
+
+main {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.post-tab {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-tab>div {
+    padding: 4px 4px;
+    cursor: pointer;
+    background: none;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    /* 讓 ::after 相對定位 */
+    transition: background 0.3s;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+/* 使用 ::after 來模擬 border-bottom 並加上滑動動畫 */
+.post-tab>div::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* 選中的 tab 樣式 */
+.post-tab>div.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* 內容區域 */
+.tab-content {
+    display: none;
+    border-radius: 0 5px 5px 5px;
+}
+
+/* 顯示當前選中的 tab 內容 */
+.tab-content.active {
+    display: block;
+}
+
+.tab-content > span {
+    font-size: 0.8rem;
+}
+
+.post-wrap {
+    margin-bottom: 24px;
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.pet-desc>div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+}
+
+.pet-content>div:first-of-type {
+    width: 70%;
+}
+
+.pet-img {
+    border-radius: 8px;
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.pet-content .pet-desc {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.post-wrap {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color-gray);
+}
+
+.pet-content {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-area {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btn-area .primary-btn {
+    background-color: var(--border-color-gray);
+    border:1px solid var(--border-color-gray)
+}
+
+.nomore-text {
+    text-align: center;
+}
+
+.nomore-text span {
+    font-size: 12px;
+}
+
+/* 刊登表單 */
+#post-form {
+    display: none;
+    background-color: var(--background-color);
+    position: fixed;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    max-width: 425px;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    z-index: 999;
+}
+
+#post-form form {
+    margin-top: 60px;
+}
+
+.form-wrap {
+    margin-bottom: 24px;
+}
+
+
+#post-form .title {
+    padding: 0 16px;
+}
+
+#post-form .close-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+}
+
+.form-main>div input[type="checkbox"] {
+    visibility: visible;
+    height: 20px;
+    width: 20px;
+}
+
+
+/* main-filter的按鈕 */
+.form-main button,
+.form-textfeild {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-bottom: 1px solid var(--section-border-color-gray);
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.form-main button>div,
+.form-textfeild label {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+}
+
+.form-textfeild>input[type=text] {
+    border: none;
+    text-align: right;
+    font-size: 0.9rem;
+    padding: 0;
+
+}
+
+.form-textfeild label > img,
+.form-textarea label > img {
+    padding-right: 4px;
+}
+
+.form-textfeild>input[type=text]:focus-visible {
+    outline-color: #fff
+}
+
+.form-textfeild>input[type=text]::placeholder {
+    color: var(--border-color-gray);
+}
+
+.form-textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-bottom: 1px solid var(--section-border-color-gray);
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.form-textarea>label {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-textarea>textarea {
+    width: 100%;
+    height: 8ch;
+    border: #fff;
+    outline-color: #fff;
+}
+
+.form-main button>div img {
+    margin-right: 4px;
+}
+
+.form-main button>span {
+    color: var(--border-color-gray);
+}
+
+.post-info {
+    background-color: #fff;
+}
+
+.post-info input[type=checkbox] {
+    display: none;
+}
+
+.post-info .switch-container {
+    padding: 8px 16px;
+    margin-bottom: 0px;
+}
+
+.post-info .switch-container span {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.upload-img {
+    background-color: #fff;
+    padding: 16px;
+    font-size: 0.9rem;
+}
+
+.custom-upload-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 30px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.custom-upload-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.check-wrap {
+    font-weight: bold;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-bottom {
+    padding: 16px;
+}
