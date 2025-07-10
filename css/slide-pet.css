@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.card-container {
+  margin-top: 110px;
+  position: relative;
+  width: 320px;
+  height: calc(100vh - 90px);
+  max-height: 600px;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  touch-action: none;
+}
+
+/* 黑色漸層遮罩 */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 50%);
+  z-index: 0;
+}
+
+/* 喜歡／略過提示文字 */
+.label {
+  position: absolute;
+  top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: 4px solid;
+  border-radius: 8px;
+  opacity: 0;
+  z-index: 2;
+}
+
+.like {
+  left: 20px;
+  border-color: #27ae60;
+  color: #27ae60;
+  transform: rotate(-15deg);
+}
+
+.nope {
+  right: 20px;
+  border-color: #e74c3c;
+  color: #e74c3c;
+  transform: rotate(15deg);
+}
+
+/* 寵物資訊底部欄位 */
+.pet-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 16px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.yellow-data {
+  color: #444;
+}
+
+button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.slide-btn {
+  padding: 20px;
+}
