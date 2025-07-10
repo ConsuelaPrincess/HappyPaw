@@ -1,0 +1,186 @@
+header{
+    position: relative;
+}
+header>div {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    max-width: 425px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+header>div>div {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.head-btn {
+    background-color: transparent;
+    border: none;
+    width: 45px;
+    height: 45px;
+}
+
+.paw-img>img {
+    max-width: 425px;
+    width: 100%;
+    min-height:250px ;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+
+
+main {
+    position: relative;
+    background-color: #fff;
+    margin-top: 200px;
+    border-radius: 40px 40px 0 0;
+    padding: 24px;
+    margin-bottom: 60px;
+    z-index: 10;
+}
+
+main>div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+}
+
+main>div {
+    margin-bottom: 12px;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.pet-data-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.pet-data-group>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color-light);
+    padding: 4px;
+    border-radius: 8px;
+    width: calc(33% - 12px);
+    height: 80px;
+}
+
+.pet-data-group>div>.pet-data {
+    font-size: 1rem;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+.pet-data-group>div>div {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+
+nav {
+    align-items: center;
+    gap: 8px;
+}
+
+nav>span {
+    font-weight: bold;
+}
+
+.primary-btn {
+    height: 46px;
+    text-align: center;
+}
+
+/* 領養表單 */
+#adoption-form {
+    display: none;
+    background-color: #fff;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    max-width: 425px;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.wrap {
+    padding-top: 12px;
+}
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color-gray);
+    padding: 12px 16px;
+}
+
+.top>button {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    padding: 0px;
+    background: none;
+    border: none;
+}
+
+.form-main>p {
+    margin-bottom: 24px;
+    background-color: var(--secondary-color-light);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bolder;
+}
+
+.form-main>div {
+    margin-bottom: 24px;
+}
+
+
+.form-main>div>textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.form-main>div:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-main>div:last-of-type>div {
+    border-bottom: 1px solid var(--border-color-gray);
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+
+.form-main>div input[type="checkbox"] {
+    visibility: visible;
+    height: 20px;
+    width: 20px;
+}
