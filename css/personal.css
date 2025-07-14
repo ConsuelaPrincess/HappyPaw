@@ -17,6 +17,10 @@ body {
     margin-bottom: 16px;
 }
 
+.profile > div:last-child {
+    flex-grow: 1;
+}
+
 .profile > div > div {
     font-size: 0.9rem;
     display: flex;
