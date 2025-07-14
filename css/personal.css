@@ -17,10 +17,6 @@ body {
     margin-bottom: 16px;
 }
 
-.profile > div {
-    width: 100%;
-}
-
 .profile > div > div {
     font-size: 0.9rem;
     display: flex;
