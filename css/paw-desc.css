@@ -1,186 +1,381 @@
-header{
-    position: relative;
-}
-header>div {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    width: 100%;
-    max-width: 425px;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-header>div>div {
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刊登送養</title>
+</head>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/post-pet.css">
 
-.head-btn {
-    background-color: transparent;
-    border: none;
-    width: 45px;
-    height: 45px;
-}
+<body>
+    <div class="wrap">
+        <header>
+            <div><a href="personal.html"><button class="back-btn"><img src="img/chevron-left.svg" alt=""></button></a>
+                <h4>送養管理</h4>
+                <button style="visibility: hidden;"><img src="" alt=""></button>
+            </div>
+            <div class="post-tab">
+                <div data-tab="a" class="active">刊登中</div>
+                <div data-tab="b">已送養</div>
+                <div data-tab="c">審核中</div>
+                <div data-tab="d">取消刊登</div>
+            </div>
+        </header>
+        <nav>
+            <button class="primary-btn post-btn">立即刊登</button>
+        </nav>
+        <main>
+            <div id="content-a" class="tab-content active">
+                <div class="search-container">
+                    <input type="text" placeholder="搜尋你的寵物...">
+                    <img class="non-actived" src="img/search.svg" alt="">
+                    <div>
+                        <button id="filter-btn"><img src="img/filter.svg" alt=""></button>
+                    </div>
+                </div>
+                <div class="post-wrap">
+                    <div class="pet-content">
+                        <div>
+                            <img class="pet-img" src="img/pet/dog/dog-6.jpg" alt="">
+                        </div>
+                        <div class="pet-desc">
+                            <div>
+                                <span class="name">米魯</span><img src="img/male.svg" alt="icon-gender">
+                            </div>
+                            <div>
+                                <div>
+                                    <img class="img-18" src="img/watch.svg" alt="icon-location"><span
+                                        class="pet-data">觀看數：94</span>
+                                </div>
+                                <div>
+                                    <img class="img-18" src="img/like.svg" alt="icon-location"><span
+                                        class="pet-data">收藏數：18</span>
+                                </div>
+                                <div>
+                                    <img class="img-18" src="img/form (2).svg" alt="icon-location"><span
+                                        class="pet-data">問卷數：5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <button class="secondary-btn">查看問卷</button>
+                        <button class="secondary-btn">編輯資料</button>
+                        <button class="secondary-btn">取消刊登</button>
+                    </div>
+                </div>
+                <div class="post-wrap">
+                    <div class="pet-content">
+                        <div>
+                            <img class="pet-img" src="img/pet/cat/cat-3.jpg" alt="">
+                        </div>
+                        <div class="pet-desc">
+                            <div>
+                                <span class="name">梅西</span><img src="img/male.svg" alt="icon-gender">
+                            </div>
+                            <div>
+                                <div>
+                                    <img class="img-18" src="img/watch.svg" alt="icon-location"><span
+                                        class="pet-data">觀看數：94</span>
+                                </div>
+                                <div>
+                                    <img class="img-18" src="img/like.svg" alt="icon-location"><span
+                                        class="pet-data">收藏數：18</span>
+                                </div>
+                                <div>
+                                    <img class="img-18" src="img/form (2).svg" alt="icon-location"><span
+                                        class="pet-data">問卷數：5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <button class="secondary-btn">查看問卷</button>
+                        <button class="secondary-btn">編輯資料</button>
+                        <button class="secondary-btn">取消刊登</button>
+                    </div>
+                </div>
+                <div class="nomore-text">
+                    <span>沒有更多了</span>
+                </div>
+            </div>
+            <div id="content-b" class="tab-content">
+                <div class="search-container">
+                    <input type="text" placeholder="搜尋你的寵物...">
+                    <img class="non-actived" src="img/search.svg" alt="">
+                    <div>
+                        <button id="filter-btn"><img src="img/filter.svg" alt=""></button>
+                    </div>
+                </div>
+                <div class="post-wrap">
+                    <div class="pet-content">
+                        <div>
+                            <img class="pet-img" src="img/pet/dog/dog-9.jpg" alt="">
+                        </div>
+                        <div class="pet-desc">
+                            <div>
+                                <span class="name">瑞凡</span><img src="img/male.svg" alt="icon-gender">
+                            </div>
+                            <div>
+                                <div>
+                                    <img class="img-18" src="img/applier.svg" alt="icon-location"><span
+                                        class="pet-data">新飼主：Kevin</span>
+                                </div>
+                                <div>
+                                    <img class="img-18" src="img/sm_calender.svg" alt="icon-location"><span
+                                        class="pet-data">送養日：2025/01/22</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <button class="secondary-btn">回報問題</button>
+                        <button class="secondary-btn">聯絡新飼主</button>
+                    </div>
+                </div>
+                <div class="nomore-text">
+                    <span>沒有更多了</span>
+                </div>
+            </div>
+            <div id="content-c" class="tab-content">
+                <div class="search-container">
+                    <input type="text" placeholder="搜尋你的寵物...">
+                    <img class="non-actived" src="img/search.svg" alt="">
+                    <div>
+                        <button id="filter-btn"><img src="img/filter.svg" alt=""></button>
+                    </div>
+                </div>
+                <div class="post-wrap">
+                    <div class="pet-content">
+                        <div>
+                            <img class="pet-img" src="img/pet/bird/bird-5.jpg" alt="">
+                        </div>
+                        <div class="pet-desc">
+                            <div>
+                                <span class="name">阿呆</span><img src="img/male.svg" alt="icon-gender">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <button class="primary-btn">審核中</button>
+                    </div>
+                </div>
+                <div class="nomore-text">
+                    <span>沒有更多了</span>
+                </div>
+            </div>
+            <div id="content-d" class="tab-content">
+                <div class="search-container">
+                    <input type="text" placeholder="搜尋你的寵物...">
+                    <img class="non-actived" src="img/search.svg" alt="">
+                    <div>
+                        <button id="filter-btn"><img src="img/filter.svg" alt=""></button>
+                    </div>
+                </div>
+                <div class="post-wrap">
+                    <div class="pet-content">
+                        <div>
+                            <img class="pet-img" src="img/pet/cat/cat-2.jpg" alt="">
+                        </div>
+                        <div class="pet-desc">
+                           <div>
+                                <span class="name">虎斑</span><img src="img/male.svg" alt="icon-gender">
+                            </div>
+                            <div>
+                                <div>
+                                    <img class="img-18" src="img/watch.svg" alt="icon-location"><span
+                                        class="pet-data">觀看數：14</span>
+                                </div>
+                                <div>
+                                    <img class="img-18" src="img/like.svg" alt="icon-location"><span
+                                        class="pet-data">收藏數：0</span>
+                                </div>
+                                <div>
+                                    <img class="img-18" src="img/form (2).svg" alt="icon-location"><span
+                                        class="pet-data">問卷數：0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <button class="secondary-btn">編輯資料</button>
+                        <button class="secondary-btn">再次刊登</button>
+                    </div>
+                </div>
+                <div class="post-wrap">
+                    <div class="pet-content">
+                        <div>
+                            <img class="pet-img" src="img/pet/rabbit/rabbit-5.jpg" alt="">
+                        </div>
+                        <div class="pet-desc">
+                            <div>
+                                <span class="name">YUKI</span><img src="img/male.svg" alt="icon-gender">
+                            </div>
+                            <div>
+                                <div>
+                                    <img class="img-18" src="img/watch.svg" alt="icon-location"><span
+                                        class="pet-data">觀看數：88</span>
+                                </div>
+                                <div>
+                                    <img class="img-18" src="img/like.svg" alt="icon-location"><span
+                                        class="pet-data">收藏數：32</span>
+                                </div>
+                                <div>
+                                    <img class="img-18" src="img/form (2).svg" alt="icon-location"><span
+                                        class="pet-data">問卷數：1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <button class="secondary-btn">編輯資料</button>
+                        <button class="secondary-btn">再次刊登</button>
+                    </div>
+                </div>
+                <div class="nomore-text">
+                    <span>沒有更多了</span>
+                </div>
+            </div>
+        </main>
+    </div>
 
-.paw-img>img {
-    max-width: 425px;
-    width: 100%;
-    min-height:250px ;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
+    <div id="post-form">
+        <div class="main-header">
+            <button class="close-btn"><img src="img/x.svg" alt=""></button>
+            <h4>刊登送養資訊</h4>
+            <button style="visibility: hidden;"></button>
+        </div>
+        <form action="" method="get" class="form">
+            <div class="form-main">
+                <div class="form-wrap upload-img">
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <label for="fileInput" class="custom-upload-btn">+加入照片</label>
+                    <span id="fileName">尚未選擇檔案</span>
+                </div>
+                <div class="form-wrap">
+                    <div class="title">寵物資訊</div>
+                    <div>
+                        <div class="form-textfeild">
+                            <label for="name"><img src="img/shelter.svg" alt="">寵物名稱</label>
+                            <input type="text" placeholder="請輸入名稱">
+                        </div>
+                        <button class="open-sub-filter" data-target="dog-source-filter">
+                            <div><img src="img/shelter.svg" alt="">來源</div><span
+                                id="dog-source-filter-display">請選擇來源</span>
+                        </button>
+                        <button class="open-sub-filter" data-target="dog-location-filter">
+                            <div><img src="img/location-black.svg" alt="">地點</div><span
+                                id="dog-location-filter-display">請選擇地點</span>
+                        </button>
+                        <button class="open-sub-filter" data-target="dog-breed-filter">
+                            <div><img src="img/breeds.svg" alt="">品種</div><span
+                                id="dog-breed-filter-display">請選擇品種</span>
+                        </button>
+                        <button class="open-sub-filter" data-target="dog-sexaul-filter">
+                            <div><img src="img/gender.svg" alt="">性別</div><span
+                                id="dog-sexaul-filter-display">請選擇性別</span>
+                        </button>
+                        <button class="open-sub-filter" data-target="dog-age-filter">
+                            <div><img src="img/age.svg" alt="">年齡</div><span id="dog-age-filter-display">請選擇年齡</span>
+                        </button>
+                        <button class="open-sub-filter" data-target="dog-pesonality-filter">
+                            <div><img src="img/hash.svg" alt="">個性</div><span
+                                id="dog-pesonality-filter-display">請選擇個性</span>
+                        </button>
+                        <button class="open-sub-filter" data-target="dog-healthy-filter">
+                            <div><img src="img/healthy-condition.svg" alt="">健康狀況</div><span
+                                id="dog-healthy-filter-display">請選擇健康狀況</span>
+                        </button>
+                        <div class="form-textarea">
+                            <label for="name">送養原因</label>
+                            <textarea placeholder="請描述牠的個性"></textarea>
+                        </div>
+                        <div class="form-textarea">
+                            <label for="name">備註</label>
+                            <textarea placeholder="請輸入其它備註"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-wrap">
+                    <div class="title">領養條件</div>
+                    <div class="post-info">
+                        <div class="switch-container">
+                            <span>傳送訊息前須填寫領養表單</span>
+                            <input class="filter-all-age" type="checkbox" id="accept-form" />
+                            <label for="accept-form">
+                            </label>
+                        </div>
+                        <div class="switch-container">
+                            <span>同意填寫認養合約書</span>
+                            <input class="filter-all-age" type="checkbox" id="accept-contract" />
+                            <label for="accept-contract">
+                            </label>
+                        </div>
+                        <div class="switch-container">
+                            <span>同意居家訪問</span>
+                            <input class="filter-all-age" type="checkbox" id="accept-homevisit" />
+                            <label for="accept-homevisit">
+                            </label>
+                        </div>
+                        <div class="switch-container">
+                            <span>同意進行後續追蹤</span>
+                            <input class="filter-all-age" type="checkbox" id="accept-track" />
+                            <label for="accept-track">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="check-wrap form-wrap">
+                    <label class="" for="">我已詳閱並同意刊登條款</label>
+                    <input type="checkbox"></div>
+            </div>
+            <div class="form-bottom">
+                <input class="primary-btn" type="submit" value="提交表單">
+            </div>
+        </form>
+    </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".post-tab div");
+            const contents = document.querySelectorAll(".tab-content");
 
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function () {
+                    // 移除所有 tab 的 active 狀態
+                    tabs.forEach(t => t.classList.remove("active"));
+                    // 隱藏所有內容
+                    contents.forEach(content => content.classList.remove("active"));
 
-main {
-    position: relative;
-    background-color: #fff;
-    margin-top: 200px;
-    border-radius: 40px 40px 0 0;
-    padding: 24px;
-    margin-bottom: 60px;
-    z-index: 10;
-}
+                    // 設定當前點擊的 tab 為 active
+                    this.classList.add("active");
 
-main>div:first-of-type {
-    display: flex;
-    justify-content: space-between;
-}
+                    // 顯示對應的內容
+                    const tabId = this.getAttribute("data-tab");
+                    document.getElementById("content-" + tabId).classList.add("active");
+                });
+            });
+        });
 
-main>div {
-    margin-bottom: 12px;
-}
+        document.querySelector("nav .post-btn").addEventListener("click", function () {
+            document.querySelector("#post-form").style.display = "block";
+            document.querySelector(".paw-desc").style.display = "none";
+            document.querySelector(".post-tab").style.display = "none";
+        });
+        // 點擊「關閉」按鈕時隱藏篩選彈窗
+        document.querySelector(".close-btn").addEventListener("click", function () {
+            document.querySelector("#post-form").style.display = "none";
+            document.querySelector(".paw-desc").style.display = "block";
+        });
 
-.name {
-    font-size: 1.5rem;
-    font-weight: bolder;
-}
+        document.getElementById("fileInput").addEventListener("change", function () {
+            const fileName = this.files.length > 0 ? this.files[0].name : "尚未選擇檔案";
+            document.getElementById("fileName").textContent = fileName;
+        });
+    </script>
+</body>
 
-.pet-data-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.pet-data-group>div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color-light);
-    padding: 4px;
-    border-radius: 8px;
-    width: calc(33% - 12px);
-    height: 80px;
-}
-
-.pet-data-group>div>.pet-data {
-    font-size: 1rem;
-    margin-top: 4px;
-    font-weight: bold;
-}
-
-.pet-data-group>div>div {
-    display: flex;
-    align-items: center;
-    font-size: 0.9rem;
-}
-
-
-nav {
-    align-items: center;
-    gap: 8px;
-}
-
-nav>span {
-    font-weight: bold;
-}
-
-.primary-btn {
-    height: 46px;
-    text-align: center;
-}
-
-/* 領養表單 */
-#adoption-form {
-    display: none;
-    background-color: #fff;
-    position: fixed;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    max-width: 425px;
-    width: 100%;
-    height: 100vh;
-    overflow-y: scroll;
-}
-.wrap {
-    padding-top: 12px;
-}
-.top {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid var(--border-color-gray);
-    padding: 12px 16px;
-}
-
-.top>button {
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    top: 12px;
-    left: 16px;
-    padding: 0px;
-    background: none;
-    border: none;
-}
-
-.form-main>p {
-    margin-bottom: 24px;
-    background-color: var(--secondary-color-light);
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: bolder;
-}
-
-.form-main>div {
-    margin-bottom: 24px;
-}
-
-
-.form-main>div>textarea {
-    width: 100%;
-    height: 100px;
-}
-
-.form-main>div:last-of-type {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.form-main>div:last-of-type>div {
-    border-bottom: 1px solid var(--border-color-gray);
-    padding-bottom: 16px;
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-}
-
-
-.form-main>div input[type="checkbox"] {
-    visibility: visible;
-    height: 20px;
-    width: 20px;
-}
+</html>
