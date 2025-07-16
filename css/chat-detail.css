@@ -84,6 +84,7 @@ nav {
     background-color: var(--primary-color);
     border: none;
     border-radius: 4px;
+    padding-top:4px;
 }
 
 /* 預約表單 */
