@@ -242,6 +242,7 @@ button {
 
 .primary-btn:disabled {
   background-color: var(--border-color-gray);
+  border: var(--border-color-gray);
 }
 
 .secondary-btn {
