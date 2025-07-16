@@ -17,7 +17,7 @@ body {
 }
 
 .chat-person > div{
-    width: 100%;
+    width: calc(100% - 8px - 50px);
 } 
 
 .chat-person > div > div {
@@ -32,4 +32,8 @@ body {
 .time{
     font-size: 0.8rem;
     color: var(--border-color-gray);
+}
+
+.title {
+    margin-bottom: 0px;
 }
