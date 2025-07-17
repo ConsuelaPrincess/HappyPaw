@@ -176,9 +176,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
 }
 
+#survey9 .survey-main > div > img {
+    width: 250px;
+}
 
 #survey9 .survey-main > div > p{
     text-align: center;
