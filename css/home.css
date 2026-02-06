@@ -134,8 +134,8 @@ section:last-of-type {
 }
 
 #filter-btn {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
     background-color: var(--primary-color);
     border: none;
     border-radius: 4px;
