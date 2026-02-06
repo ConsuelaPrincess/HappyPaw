@@ -67,7 +67,7 @@ input[type="checkbox"]:checked {
   background-color: #fff;
     display: flex;
     justify-content: space-between;
-    padding: 12px 16px;
+    padding: 16px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.04);
     position: fixed;
     top: 0;
