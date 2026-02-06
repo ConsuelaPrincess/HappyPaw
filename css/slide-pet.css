@@ -92,4 +92,5 @@ button {
 
 .slide-btn {
   padding: 20px;
+  display:flex;
 }
