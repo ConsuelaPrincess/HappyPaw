@@ -229,7 +229,7 @@ main {
     border-bottom: 1px solid var(--section-border-color-gray);
     background: #fff;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .form-main button>div,
@@ -270,7 +270,7 @@ main {
     border-bottom: 1px solid var(--section-border-color-gray);
     background: #fff;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .form-textarea>label {
@@ -309,7 +309,7 @@ main {
 }
 
 .post-info .switch-container span {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
