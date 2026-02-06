@@ -56,7 +56,7 @@ main {
     position: relative;
     /* 讓 ::after 相對定位 */
     transition: background 0.3s;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: bold;
     padding-bottom: 8px;
 }
