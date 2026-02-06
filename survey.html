@@ -27,7 +27,7 @@
         }
 
         // 套用到各個區塊
-        ["location", "breeds", "healthy"].forEach(group => {
+        ["location", "breeds", "healthy","sexual"].forEach(group => {
             setupCheckboxToggle(`.select-all-${group}`, `.${group}-checkbox`);
         });
 
@@ -582,6 +582,7 @@
                     <label for="allsexual">
                     </label>
                 </div>
+                    <div class="sexaul-checkbox">
                     <label class="selecter">
                         <input type="checkbox" name="dogSexaul" value="male">
                         <div class="select-content">男生</div>
@@ -728,4 +729,5 @@
 
 
 </html>
+
 
