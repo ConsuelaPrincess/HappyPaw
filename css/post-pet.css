@@ -169,7 +169,8 @@ main {
 
 .btn-area .primary-btn {
     background-color: var(--border-color-gray);
-    border: 1px solid var(--border-color-gray)
+    border: 1px solid var(--border-color-gray);
+    font-size:1rem;
 }
 
 .nomore-text {
