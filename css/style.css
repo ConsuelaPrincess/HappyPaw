@@ -40,6 +40,8 @@ body {
 a {
   text-decoration: none;
   color: var(--text-color);
+  display:flex;
+  align-item:center;
 }
 
 h2 {
@@ -211,6 +213,8 @@ nav {
 /* 按鈕 */
 button {
   cursor: pointer;
+  display:flex;
+  align-item:center;
 }
 
 .primary-btn {
