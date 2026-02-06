@@ -16,7 +16,7 @@ header>div:first-of-type {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .back-btn {
