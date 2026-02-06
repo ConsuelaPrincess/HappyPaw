@@ -219,7 +219,8 @@ nav {
 button {
   cursor: pointer;
   display:flex;
-  align-item:center;
+  align-items:center;
+  justify-content:center;
 }
 
 .primary-btn {
