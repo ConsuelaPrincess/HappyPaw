@@ -189,7 +189,7 @@ section:last-of-type {
     border-bottom: 1px solid var(--border-color-gray);
     background: #fff;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .filter-main>button>div {
