@@ -41,7 +41,12 @@ a {
   text-decoration: none;
   color: var(--text-color);
   display:flex;
-  align-item:center;
+  align-items:center;
+}
+
+.chat-list  a {
+  display:inline-block;
+  width:100%;
 }
 
 h2 {
