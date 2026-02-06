@@ -348,7 +348,7 @@ button {
 }
 
 .selecter input:checked~.select-content {
-  color:var(--primary-color-dark);
+  color:var(--primary-color-darker);
   font-weight: bold;
 }
 
