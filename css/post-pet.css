@@ -151,6 +151,10 @@ main {
     border: 1px solid var(--border-color-gray);
 }
 
+.post-wrap .secondary-btn{
+    font-size:1rem;
+}
+
 .pet-content {
     width: 100%;
     display: flex;
