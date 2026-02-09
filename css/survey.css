@@ -8,12 +8,11 @@
     top: 0;
     width: 425px;
     max-width: 100%;
-    padding: 16px 0;
     
 }
 
 #survey1 .survey-top, #survey1 .survey-bottom {
-    background-color:rgba(0, 0, 0, 0);
+    background-color:rgba(0, 0, 0, 0) !important;
     box-shadow: none;
 }
 
@@ -54,6 +53,12 @@
     left: -15%;
 }
 
+.dotbg{
+    position: absolute;
+    top: 50%;
+    left: -15%;
+    
+}
 .survey-top {
     background-color: #fff;
     display: flex;
