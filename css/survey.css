@@ -53,12 +53,10 @@
     left: -15%;
 }
 
-.dotbg{
-    position: absolute;
-    top: 50%;
-    left: -15%;
-    
+.dotbg > img{
+    width:100%;
 }
+
 .survey-top {
     background-color: #fff;
     display: flex;
